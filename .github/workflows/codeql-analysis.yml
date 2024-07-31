@@ -12,7 +12,7 @@ on:
       languages:
         description: 'Languages to analyze'
         required: true
-        default: 'c_cpp'
+        default: 'python'
 
 jobs:
   analyze:
@@ -30,7 +30,7 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
-        languages: "c_cpp"
+        languages: "python"
 
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2
@@ -38,4 +38,4 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
       with:
-        category: "/language:c_cpp"
+        category: "/language:python"
